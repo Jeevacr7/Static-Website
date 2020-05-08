@@ -1,0 +1,113 @@
+/* Start:first section of top header */
+#topheader{
+	border-bottom: 1px solid #ebebeb;
+	width: 100%;
+}
+#topheader a{
+	color: #2c3e50;
+	font-weight: 600;
+	font-size: 0.89rem;
+	text-decoration: none;
+}
+/* End:first section of top header */
+
+nav ul li a{
+	font-size: 1.1rem;
+	font-weight: 600;
+}
+
+
+
+.bread-crumb{
+    background-color:#e9ecef ;
+}
+.breadcrumb {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: .75rem 1rem;
+    margin-bottom: 0rem !important;
+    list-style: none;
+    background-color: none !important;
+    border-radius: .25rem;
+}
+
+
+.qualities-img{
+    width: 200px;
+}
+
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0px !important;
+   
+}
+
+
+
+
+/*Start: Fourth Section for newsletter*/
+.home-newsletter{
+	background-color:#004d80 ;
+	color: white;
+}
+.home-newsletter .form-control{
+	height: 50px;
+	border-color: transparent;
+	border-radius: 20px 0px 0px 20px;
+
+}
+.home-newsletter .btn{
+	min-height: 50px;
+	border-radius: 0px 20px 20px 0px;
+	background-color: #243c4f;
+	color: #fff;
+}
+.home-newsletter .btn:hover{
+	color: crimson;
+}
+
+/*End: Fourth Section for newsletter*/
+
+
+.full-footer{
+	background-color: #243c4f;
+	
+}
+/* footer */
+.top-footer p{
+	color: white;
+}
+.top-footer a{
+	color: white;
+}
+.top-footer h2{
+	color: white;
+}
+.top-footer h3{
+	color: white;
+}
+.bottom-footer{
+	background-color: #031b2e;
+	width: 100%;
+}
+.bottom-footer p{
+	color: white;
+}
+/* end footer */
+
+/*Start: seventh Section for newsletter*/
+.clients-section{
+	background-color: rgb(152, 152, 155);
+}
+.client a{
+
+	color: black;
+}
+
+/*End: seventh Section for newsletter*/
