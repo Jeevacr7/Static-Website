@@ -19,6 +19,17 @@ nav ul li a{
 	font-size: 1.1rem;
 	font-weight: 600;
 }
+nav a{
+	position: relative;
+}
+
+.computer-img img{
+	transition: transform .3s ease-in;		
+}
+.computer-img img:scope{
+	transform: scale3d(1.1, 1.1, 0.5) 
+}
+
 .full-footer{
 	background-color: #243c4f;
 	
@@ -36,6 +47,10 @@ nav ul li a{
 .top-footer h3{
 	color: white;
 }
+.top-footer{
+	background-color: #031b2e;
+	width: 100%;
+}
 .bottom-footer{
 	background-color: #031b2e;
 	width: 100%;
@@ -51,11 +66,29 @@ nav ul li a{
 .top-hero-section a{
 	color: white;
 	font-weight: 600;
+	text-decoration: none;
+}
+.top-hero-section button{
+	transition: transform .3s ease-in;
+}
+.top-hero-section button:hover{
+	transform:translatey(-10px) ;
 }
 
 /* End :Home Page first hero section */
+.ourqual{
+	background-color: paleturquoise;
+	position: relative;
+}
+
 .qualities-img{
 	width: 200px;
+	transition: transform .3s ease-in;
+
+}
+.qualities-img:hover{
+	transform: scale3d(1.1, 1.1, 0.5) 
+
 }
 
 .row {

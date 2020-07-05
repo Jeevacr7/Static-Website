@@ -70,7 +70,7 @@
                     <ul class="navbar-nav ml-auto">
 
                         <li class="nav-item ">
-                            <a class="nav-link" href=""><i class="fas fa-user-plus"></i> Sign up</a>
+                            <a class="nav-link" href="signup.html"><i class="fas fa-user-plus"></i> Sign up</a>
                         </li>
                     </ul>
                 </div>
@@ -84,7 +84,7 @@
 
     <section class=" bimg" style="height: 900px;">
         <div class="container form-group form-valign">
-            <form id="form" onsubmit="return formvalidate()" class="form-color m-auto  px-sm-2">
+            <form id="form" action="log.php" method="post" onsubmit="return formvalidate()" class="form-color m-auto  px-sm-2">
                 <div class="form-row text-center">
                     <div class=" col-md-4 col-sm-2 m-auto row-al">
                         <h3>LOGIN</h3>
@@ -93,14 +93,16 @@
                 <div class="form-row pb-md-3  row-al">
                     <div class=" col-8 col-sm-6 m-auto">
                         <label class="label" for="forusername">Username</label><br>
-                        <input id="uname" class="form-control" type="text" placeholder="Username">
+                        <input id="uname" name="Username" class="form-control" type="text" placeholder="Username"
+                            onkeyup="formvalidate(this.value)" onblur="formvalidate(this.value)" autocomplete="off">
                         <small id="errUname" style="color: rgb(238, 16, 16);"></small>
                     </div>
                 </div>
                 <div class="form-row pb-md-3 row-al">
                     <div class="col-8 col-md-6 m-auto">
                         <label class="label" for="forusforpassword">Password</label><br>
-                        <input id="pass" class="form-control" type="password" placeholder="Enter your password" >
+                        <input id="pass" name="Password" class="form-control" type="password" placeholder="Enter your password"
+                            onkeyup="formvalidate(this.value)"  onblur="formvalidate(this.value)" autocomplete="off">
                         <small id="errPass" style="color: rgb(238, 16, 16);"></small>
                         <div class="bttn ">
                             <button type="submit" class="btn btn-danger btn-block mt-4">Submit</button>
@@ -205,34 +207,42 @@
     </footer>
 
     <script>
-            validate=function(){
-                formvalidate();
+        
 
-            }
-         function formvalidate(){
-         var Username=document.getElementById("uname").value;
-         var password=document.getElementById("pass").value;
-         var erroruname=document.getElementById("errUname");
-         var errorpass=document.getElementById("errPass");
-         var nameregex=/^[a-z/d]{5,12}$/i;
-         var passregex=/^[\w@-]{6,15}$/i;
+        function formvalidate() {
+            console.log('formvalidate');
+            var username = document.getElementById("uname").value;
+        var erroruname = document.getElementById("errUname");
+        var password = document.getElementById("pass").value;
+        var errorpass = document.getElementById("errPass");
+        
+          if(username === ""){
+            erroruname.innerHTML="field is empty";
+            return false;
+          }else{
+                erroruname.innerHTML = "";
+          }
+
+          if(password === ""){
+            errorpass.innerHTML = "field is empty";
+            return false;
+          }else{
+            errorpass.innerHTML = "";
+          }
 
 
-         if(nameregex.test(Username)==false){
-             erroruname.innerHTML="PLease enter a valid username";
-             return false;
-         }else if(nameregex.test(Username)){
-            erroruname.innerHTML="";
-         }else if(passregex.test(password)==false){
-            errorpass.innerHTML="PLease enter a valid password";
-             return false;
-         }else if(passregex.test(password)){
-            errorpass.innerHTML="";
-         }
-}
+          if(username === true && password === true){
+              return true;
+          }
+            
+        
+        }  
+
+    
+
     </script>
 
-        
+
 
 
 

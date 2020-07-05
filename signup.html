@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  
     <!--Header -->
 
     <header>
@@ -72,7 +73,7 @@
                         <li class="nav-item ">
                             <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Log in</a>
                         </li>
-                       
+
                     </ul>
                 </div>
             </div>
@@ -85,59 +86,66 @@
 
     <section class=" bimg" style="height: 900px;">
         <div class="container form-group form-valign vh-container">
-            <form action="" onsubmit="return false" autocomplete="off" class="form-color form-width m-auto">
-              <div class="text-center row-al">
-                  <h3>Sign Up</h3>
-              </div>
-              <div class="row  justify-content-center row-al">
-              <div class="btn-toolbar mt-3 " role="toolbar" aria-label="Toolbar with button groups">
-                <div class="btn-group mr-4" role="group" aria-label="First group">
-                  <button type="button" class="btn btn-secondary"><i class="fab fa-google"></i> google</button>                 
+            <form onsubmit="return checkInputs()" id="form" action="insert.php" method="POST" class="form-color form-width m-auto">
+                <div class="text-center row-al">
+                    <h3>Sign Up</h3>
                 </div>
-                <div class="btn-group mr-4" role="group" aria-label="Second group">
-                  <button type="button" class="btn btn-secondary"><i class="fab fa-2x fa-facebook-square"></i> Facebook</button>                 
+                <div class="row  justify-content-center row-al">
+                    <div class="btn-toolbar mt-3 " role="toolbar " aria-label="Toolbar with button groups">
+                        <div class="btn-group mr-2 mr-md-4" role="group" aria-label="First group">
+                            <button type="button" class="btn btn-secondary btn-size"><i class="fab fa-google"></i>
+                                google</button>
+                        </div>
+                        <div class="btn-group mr-2 mr-md-4" role="group" aria-label="Second group">
+                            <button type="button" class="btn btn-secondary btn-size"><i
+                                    class="fab fa-2x fa-facebook-square"></i> Facebook</button>
+                        </div>
+                        <div class="btn-group" role="group" aria-label="Third group">
+                            <button type="button" class="btn btn-secondary btn-size"><i
+                                    class="fab fa-2x fa-twitter-square"></i> Twitter</button>
+                        </div>
+                    </div>
                 </div>
-                <div class="btn-group" role="group" aria-label="Third group">
-                  <button type="button" class="btn btn-secondary"><i class="fab fa-2x fa-twitter-square"></i> Twitter</button>
+                <hr>
+                <div class="form-row  row-al mb-3">
+                    <div class="col-8 col-md-7 m-auto">
+                        <label>Username</label>
+                        <input id="uname" type="text" placeholder="Username" class="form-control"
+                            onkeyup="checkInputs(this.value)" onblur="checkInputs(this.value)" name="Username">
+                        <small id=error></small>
+                    </div>
                 </div>
-              </div>
-            </div>
-              <hr>
-              <div class="form-row  row-al">
-              <div class="col-8 col-md-7 m-auto">
-                  <label>Username</label>
-                  <input id="uname" type="text" class="form-control" placeholder="Username" onkeyup="validateUname(this.value)" onblur="validateUname(this.value)">
-                  <small id="errname" style="color: red;"></small>
-              </div>
-            </div>
-            <div class="form-row  row-al">
-                <div class="col-8 col-md-7 m-auto">
-                    <label>Email</label>
-                    <input id="email" type="text" onkeyup="validateEmail(this.value)" onblur="validateEmail(this.value)" class="form-control" placeholder="email">
-                    <small id="errmail" style="color: red;"></small>
+                <div class="form-row  row-al mb-3">
+                    <div class="col-8 col-md-7 m-auto">
+                        <label>Email</label>
+                        <input id="email" type="email" class="form-control" name="Email" onkeyup="checkInputs(this.value)"
+                            onblur="checkInputs(this.value)" placeholder="email" >
+                        <small id=erremail></small>
+                    </div>
                 </div>
-              </div> 
-            <div class="form-row  row-al">
-                <div class="col-8 col-md-7 m-auto">
-                    <label>Password</label>
-                    <input id="pass" type="password" onkeyup="validatePass(this.value)" onblur="validatePass(this.value)" class="form-control " placeholder="Password">
-                  <small id="errpass" style="color: red;"></small>
+                <div class="form-row  row-al mb-3">
+                    <div class="col-8 col-md-7 m-auto">
+                        <label>Password</label>
+                        <input id="pass" type="text" placeholder="Password" class="form-control"
+                            onkeyup="checkInputs(this.value)" onblur="checkInputs(this.value)" placeholder=""
+                            name="Password">
+                        <small id=errpass></small>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row  row-al">
-                <div class="col-8 col-md-7 m-auto">
-                    <label>Confirm Password</label>
-                    <input id="cpass" type="password" onkeyup="validatePass(this.value)" onblur="validatePass(this.value)" class="form-control" placeholder="Confirm">
-                  <small id="errcpass" style="color: red;"></small>
+                <div class="form-row  row-al mb-3">
+                    <div class="col-8 col-md-7 m-auto">
+                        <label>Confirm Password</label>
+                        <input id="cpass" type="text" placeholder="Confirm" class="form-control"
+                            onkeyup="checkInputs(this.value)" onblur="checkInputs(this.value)"
+                            placeholder="Confirm Password" name="Confirm_Password">
+                        <small id=errcpass></small>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row text-center  row-al">
-                <div class="col-md-12 mt-3 ">
-                    <button class="btn btn-danger" onclick="validation();">Sign Up</button>
+                <div class="form-row text-center  row-al mb-3">
+                    <div class="col-md-12 mt-3 ">
+                        <button type="submit" class="btn btn-danger">Sign Up</button>
+                    </div>
                 </div>
-            </div>
-
-
             </form>
         </div>
     </section>
@@ -233,65 +241,75 @@
         </div>
     </footer>
 
+
+
     <script type="text/javascript">
+        const form = document.getElementById('form');
+        const username = document.getElementById('uname');
+        const email = document.getElementById('email');
+        const password = document.getElementById('pass');
+        const password2 = document.getElementById('cpass');
+        var small = document.getElementById('error');
+        var mail = document.getElementById('erremail');
+        var passwordt = document.getElementById('errpass');
+        var passwordt2 = document.getElementById('errcpass');
 
-    validation = function(){
-        validateEmail();
-        validateUname();
-        validatePass();
-    }
-
-    var email  = document.getElementById('email').value;
-    var erremail = document.getElementById('errmail');
-    var uname = document.getElementById('uname').value;
-    var erruname = document.getElementById('errname');
-    var pass = document.getElementById('pass');
-    var errpass = document.getElementById('errpass');
-    var cpass = document.getElementById('cpass');
-    var errcpass = document.getElementById('errcpass');
-
-        function validateEmail(email)
-        {
-            var reg = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,6}$|^$/;
-         if (reg.test(email)== false ){
-         erremail.innerHTML = "Give an proper mail Id" }
-         else if (reg.test(email)==true){
-         erremail.innerHTML = "";
-         }
-        } 
+        
 
 
-        function validateUname(uname){
-            var reg1 = /^[a-zA-Z]{7}$/;
-            if(reg1.test(uname)==false){
-                erruname.innerHTML="enter a valid username";
-            }else if(reg1.test(uname)==true){
-                erruname.innerHTML="";
 
+
+
+        function checkInputs() {
+            console.log('checkInputs');
+            const usernameValue = username.value.trim();
+            const emailValue = email.value.trim();
+            const passwordValue = password.value.trim();
+            const password2Value = password2.value.trim();
+            var reg = /^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/;
+            var reg1 = /^([a-z0-9]{6,20})$/
+
+            if (usernameValue === "") {
+                small.innerHTML = 'field connot be blank'
+                return false;
+
+            } else {
+                small.innerHTML = '';
+                
+            }
+
+            if (reg.test(emailValue) === false || emailValue === "") {
+                mail.innerHTML = "enter a valid email"
+                return false;
+            } else {
+                mail.innerHTML = '';
+            }
+
+            if (passwordValue === "") {
+                passwordt.innerHTML = 'password connot be blank';
+                return false;
+            } else if (reg1.test(passwordValue) === false) {
+                passwordt.innerHTML = 'password should contain atleast 6-20 characters';
+                return false;
+            } else {
+                passwordt.innerHTML = '';
+                
+            }
+
+            if (password2Value !== passwordValue) {
+                passwordt2.innerHTML = 'password does not match';
+                return false;
+            } else {
+                passwordt2.innerHTML = '';
+            }
+            
+            if(usernameValue == true && emailValue == true && passwordValue == true && password2Value == true){
+                return true;
             }
         }
 
-        function validatePass(){
-            if(cpass.value != pass.value){
-                errcpass.innerHTML = "Password Mismatch";
-               
-            }else if (cpass.value == pass.value){
-                errcpass.innerHTML ="";
-            }
-           
-           
-        }
 
-        function validatePass(){
-            var reg2 =/^$/;
-
-            if(pass.value == ""){
-                errpass.innerHTML = "Please enter the password"
-            }else if (reg2.test(pass.value) == false){
-                errpass.innerHTML =""
-            }
-        }
-        </script> 
+    </script>
 
 
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
